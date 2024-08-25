@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTootTip</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin-top: 300px;
+            font-size: 2rem;
+        }
+
+        [data-tooltip] {
+            background-color: red;
+            position: relative;
+            /*relative deme sebebimiz data-tooltip sonrasi gelecek elemanlar icin onlari absolute yaptigimiz icin*/
+
+            
+            
+        }
+
+        [data-tooltip]::before, [data-tooltip]::after {
+            position: absolute;
+            --tooltipColor : #333;
+            --tooltipOkBoyut:1rem;
+            left: 50%;
+            /*parentin yarisi kadar sola gelmesi icin yaptik cunku yazimiz dinamik boyutu degisebilir */
+            /*suan bu mudahalelerle yazi tam ortalanmadi
+            Tam ortadan itibaren olustu yani sagdan icerigin boyutu kadar bi bosluk lazim*/
+
+        }
+
+        [data-tooltip]:hover:before {
+            background-color: var(--tooltipColor);
+            color: white;
+            content: attr(data-tooltip); /*data-tooltip imizin sahip oldugu degeri icerik olarak kullandik*/
+
+
+            /*transform:translate() ---> elementleri kendi boyutlariyla x ya da y ekseninde kaydırılmasini sagliyor
+            örn: transform: translate(20px); x ekseninde sağa dogru 20px kaydırır*/
+            transform: translate(-50%, calc(-100% - 1rem)); /*tam ortalanmis oldu*/
+            
+            /*Suan bu haliyle data-tooltip uzunlugu arttigi zaman ve icerik uzunlugu arttikca ortalama isi korunmaz*/
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            width: max-content; /*icerigi kadar yer kaplar*/
+            max-width: 100%;
+            /*Yine tam olarak olmadi. Cunku span inline element. */
+            text-align: center;
+        }
+
+        [data-tooltip]:hover:after {
+            content: ''; 
+            border: calc(var(--tooltipOkBoyut / 2))solid transparent;
+            border-top-color: var(--tooltipColor);
+            top: 0px;
+            width: var(--tooltipOkBoyut);
+            height: var(--tooltipOkBoyut);
+            transform: translate(-50%, -100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tooltip" data-tooltip = "Bu bir deneme tooltipidir">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam esse eaque itaque laborum libero harum id, nostrum quidem doloremque officia? Eveniet, eos. Nesciunt quasi laborum repudiandae deserunt dolores quisquam magnam deleniti ex sequi illo! Doloribus dolorem officiis quos perspiciatis placeat eaque hic, suscipit itaque. Odit eaque reiciendis omnis rem dolores.</div>
+</body>
+</html>
+
+<!--
+    data-tooltip kendi attribute umuz
+    Son olarak ok icin calc fonksiyonu kullandik. Cunku satir sayisi arttikca tooltip oktan cok fazla uzaklasiyor. Ok un genişligi kadar uzaklasmasi gerekir
+-->

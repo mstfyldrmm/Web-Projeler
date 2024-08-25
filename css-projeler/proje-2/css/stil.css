@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(101px, 1fr));
+    grid-auto-rows: 101px;
+    grid-auto-flow: row dense;
+    /*Yeni gelen elemanlar satır olarak gelmesini saglar. dense ise bosluk varsa oraya uygun eleman yerlestirir*/
+}
+
+.v {
+    grid-row: span 2;
+}
+
+.h {
+    grid-column: span 2;
+}
+
+.b {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

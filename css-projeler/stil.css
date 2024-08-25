@@ -1,0 +1,9 @@
+p {
+  font-size: 32px;
+  border: 2px;
+}
+
+body {
+  background-color: bisque;
+  font-family: 'Courier New', Courier, monospace;
+}

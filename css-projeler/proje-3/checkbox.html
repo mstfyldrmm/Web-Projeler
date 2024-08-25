@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisisel Checkbox</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        .my-checkbox {
+            position: absolute;
+            opacity: 0;
+            left: -2323px;
+        }
+        /*Ekranda kullanici checkboxlari gormesin ve ekranda yer kaplamamasi icin yapildi*/
+
+        .my-checkbox + label {
+            cursor: pointer;
+            /*checkboxlardan hemen sonra gelen labellari tiklanma olayini aktifledi*/
+            display: flex;
+            align-items: center;
+        }
+
+        .my-checkbox + label::before {
+            margin-right: 0.5em;
+            content: '';
+            width: 1.5em;
+            height: 1.5em;
+            border: solid .05em black;
+            display: inline-block;
+            border-radius: 0.2em;
+        }
+
+        .my-checkbox + label:hover::before {
+            background-color: cadetblue;
+        }
+
+        /*checkbox focus oldugunda label dan onceki element icin*/
+        .my-checkbox:focus + label::before {
+            box-shadow: 0 0 20px 0 cadetblue;
+        }
+
+        .my-checkbox:checked + label::before {
+            content: '\2713';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: rgb(95, 158, 180);
+        }
+
+        .my-checkbox:disabled + label::before {
+            background-color: #ccc;
+            border-color: #999;
+        }
+
+        .my-checkbox:disabled + label {
+            color: #aaa;
+            cursor: not-allowed; /*kirmizi unlem isareti*/
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="my-checkbox" 
+    disabled checked name="" id="cb1">
+    <label for="cb1">Checkbox1</label>
+    <br>
+    <input type="checkbox" class="my-checkbox" 
+    disabled name="" id="cb2">
+    <label for="cb2">Checkbox2</label>
+    <br>
+    <input type="checkbox" class="my-checkbox" 
+    name="" id="cb3">
+    <label for="cb3">Checkbox3</label>
+    <br>
+    <input type="checkbox" class="my-checkbox" 
+    name="" id="cb4">
+    <label for="cb4">Checkbox4</label>
+</body>
+</html>

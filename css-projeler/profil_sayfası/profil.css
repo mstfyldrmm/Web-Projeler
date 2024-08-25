@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.5;
+}
+
+.header {
+    background-color: #73C6B6;
+    color: wheat;
+    padding: 1.5rem;
+    
+}
+
+.header-title {
+    text-align: center;
+    margin: 0;
+}
+
+.section {
+    padding: 1rem 2rem;
+    color: rgb(104, 63, 9);
+}
+
+.section-content {
+    padding: 1rem;
+    background-color: #73C6B6;
+    color: wheat;
+}
+
+.section-yeteneklerim, .section-projeler {
+    list-style: none;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.section-content h2 {
+    margin: 0;
+}
+
+.section-projeler li{
+    margin-bottom: 1rem;
+}
+
+.section-iletisim {
+    margin: 1rem;
+}
+
+.input {
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 0.5em;
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: inherit;
+    resize: none;
+}

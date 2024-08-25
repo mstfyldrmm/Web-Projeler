@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-bar {
+    background-color: #a29cf9;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    padding: 1rem;
+    font-size: 3rem;
+    display: flex;
+    flex-grow: 1;
+    color: #262a52;
+    text-transform: uppercase;
+}
+
+.menu {
+    flex-grow: 3;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu ul li {
+    flex-grow: 1;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fde6f6;
+}
+
+.banner {
+    background: url('https://picsum.photos/200/300') no-repeat;
+    background-size: cover;
+    
+}
+
+.banner-text {
+    padding: 10%  0;
+}
+
+.banner-text-item {
+    margin: auto;
+    width: 70%;
+}
+
+.banner-text-item h2 {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+    color: #5c5daf;
+    text-transform: uppercase;
+}
+
+.banner-text-item p {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #140f07;
+}
+
+.main-content {
+    display: flex;
+    padding: 2% 0;
+    flex-direction: row;
+
+}
+
+.main-item {
+    flex-grow: 1;
+    padding: 2%;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.main-item h2{
+    color: #5c5daf;
+}
+
+.main-item p{
+    color: #140f07;
+    margin-top: 0.5rem;
+}
+
+.form-container {
+    background-color: #5c5daf;
+    text-align: center;
+    padding: 2% 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin: auto;
+    width: 80%;
+}
+
+.form input, textarea{
+    margin-top: 1.2rem;
+    padding: 1rem;
+    outline: none;
+    border-radius: 20px;
+    border:#fde6f6 solid 1px;
+}
+
+.form button {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #262a52;
+    outline: none;
+    border: #fde6f6 solid 1px;
+    color: #fde6f6;
+    font-size: 1.2rem;
+    width: 50%;
+    align-self: center;
+
+}
+
+.form button:hover{
+    background-color: #a29cf9;
+}
+
+/*Responsive tasarım yapmak için*/
+
+@media all and (max-width:600px) {
+    .nav-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu ul{
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .menu ul li {
+        padding: 5px;
+    }
+
+    .banner h2{
+        font-size: 2rem;
+    }
+
+    .banner-text-item {
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .main-content {
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 2%;
+    }
+}

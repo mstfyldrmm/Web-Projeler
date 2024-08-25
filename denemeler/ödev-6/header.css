@@ -1,0 +1,17 @@
+.main {
+    background-color: rgb(25,130,67);
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
+}
+
+.icon a {
+    color: rgb(25,130,67);
+    display: block !important;
+}
+
+.main a:hover {
+    color: gold !important;
+}
